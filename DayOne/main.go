@@ -11,17 +11,17 @@ import (
 )
 
 func main() {
-	f, err := os.Open("number.txt")
+	file, err := os.Open("number.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	defer f.Close()
+	defer file.Close()
 
 	// part one
 	var totalNumber int = 0
 
-	scanner := bufio.NewScanner(f)
+	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanWords)
 
 	var tableau1 []int
